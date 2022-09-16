@@ -1,2 +1,2 @@
 # Linux_Application_Development
-LinuxApplicationDevelopment
+Спецкурс кафедры АСВК 2022
