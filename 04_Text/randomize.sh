@@ -18,11 +18,11 @@ while IFS= read -r line; do
     line=$(echo "$line" | tr -d '\n' | cat -v -T)
     for ((i=0;i<${#line};i++)); do
         if [ $flag -eq 0 ]; then
-            if ! [ -z ${line:i:1} ]; then
+            if [ "${line:i:1}" != " " ]; then
                 text="$text ${line:i:1}\\$row_number\\$i"
             fi
         else
-            if ! [ -z ${line:i:1} ]; then
+            if [ "${line:i:1}" != " " ]; then
                 text="$text${line:i:1}\\$row_number\\$i"
             fi
             flag=0
