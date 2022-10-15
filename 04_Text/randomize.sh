@@ -12,30 +12,23 @@ else
 fi
 
 row_number=0
-flag=1
 text=""
 while IFS= read -r line; do
     line=$(echo "$line" | tr -d '\n' | cat -v -T)
     for ((i=0;i<${#line};i++)); do
-        if [ $flag -eq 0 ]; then
-            if [ "${line:i:1}" != " " ]; then
-                text="$text ${line:i:1}\\$row_number\\$i"
-            fi
-        else
-            if [ "${line:i:1}" != " " ]; then
-                text="$text${line:i:1}\\$row_number\\$i"
-            fi
-            flag=0
+        if [ "${line:i:1}" != " " ]; then
+            text="$text${line:i:1}|$row_number|$i\new_line"
         fi
     done
     row_number=$((row_number+1))
 done
 
+text=$(echo "$text" | sed 's/\\new_line/ /g')
+
 tput clear
 
 for element in $(shuf -e $text); do
-    element=$(echo $element | tr '\\' ' ')
-    IFS=" " read symbol row column <<< $element
+    IFS="|" read symbol row column <<< $element
     tput cup $row $column
     echo "$symbol"
     sleep $sleep_delay
