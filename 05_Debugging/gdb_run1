@@ -1,0 +1,16 @@
+set pagination off
+set logging file gdb_1.output
+set logging enabled on
+
+break range.c:72 if i%5==0
+    command 1
+    echo @@@
+    print "1, 12, 1, "
+    echo @@@
+    print i
+    continue
+end
+
+run 1 12 > /dev/null
+set logging enabled off
+quit
