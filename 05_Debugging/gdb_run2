@@ -1,0 +1,17 @@
+set pagination off
+set logging file gdb_2.output
+set logging enabled on
+set $counter = 0
+
+break range.c:72 if ($counter++ >= 27 && $counter <= 35)
+    command 1
+    echo @@@
+    print "-100, 100, 3, "
+    echo @@@
+    print i
+    continue
+end
+
+run -100 100 3 > /dev/null
+set logging enabled off
+quit
