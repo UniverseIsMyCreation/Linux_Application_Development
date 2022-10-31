@@ -11,11 +11,11 @@ int main(int argc, char ** argv){
 
     if (argc < 4){
         fprintf(stderr, "Not enough parameters to run regex expression\n");
-        exit(1);
+        exit(0);
     }
     else if (argc > 4){
         fprintf(stderr, "Too many parameters\n");
-        exit(1);
+        exit(0);
     }
 
     int64_t counter;
@@ -32,7 +32,7 @@ int main(int argc, char ** argv){
         regerror(regex_res, &regex, buffer, LEN);
         fprintf(stderr, "regcomp() has returned %s\n", buffer);
         regfree(&regex);
-        exit(1);
+        exit(0);
     }
 
     regex_res = regexec(&regex, string, nmatch, pmatch, 0);
@@ -40,13 +40,13 @@ int main(int argc, char ** argv){
         fprintf(stdout, "There are no matchings in the string\n");
         fprintf(stdout, "Result: %s\n", string);
         regfree(&regex);
-        exit(1);
+        exit(0);
     }
     else if (regex_res){
         regerror(regex_res, &regex, buffer, LEN);
         fprintf(stderr, "regexec() has returned %s\n", buffer);
         regfree(&regex);
-        exit(1);
+        exit(0);
     }
 
     counter = 0;
@@ -62,7 +62,7 @@ int main(int argc, char ** argv){
     if (sub_string == NULL){
         fprintf(stderr, "Memory allocation error\n");
         regfree(&regex);
-        exit(1);
+        exit(0);
     }
     counter = 0;
     while (counter < sub_begin){
@@ -102,7 +102,7 @@ int main(int argc, char ** argv){
                         fprintf(stderr, "Undefined reference error\n");
                         regfree(&regex);
                         free(sub_string);
-                        exit(1);
+                        exit(0);
                     }
                     else{
                         int64_t new_sub_begin = pmatch[reference].rm_so;
@@ -119,7 +119,7 @@ int main(int argc, char ** argv){
                     fprintf(stderr, "Substitution backslash error\n");
                     regfree(&regex);
                     free(sub_string);
-                    exit(1);
+                    exit(0);
                 }
             }
             else{
@@ -137,7 +137,7 @@ int main(int argc, char ** argv){
         fprintf(stderr, "Exceed backslash error\n");
         regfree(&regex);
         free(sub_string);
-        exit(1);
+        exit(0);
     }
     counter = sub_end;
     while (string[counter] != '\0'){
