@@ -29,19 +29,18 @@ int main(int argc, char ** argv){
     for(;;){
         
         {
-            free(*line);
+            free(cur_line);
             #ifndef HAVE_LIBREADLINE
-                printf("> ");
                 size_t len = 0;
-                int count = getline(line, &len, stdin);
+                int count = getline(&cur_line, &len, stdin);
                 if (count <= 0)
-                    *line = NULL;
-                else if ((*line)[count-1] == '\n')
-                    (*line)[count-1] = '\0';
+                    cur_line = NULL;
+                else if ((cur_line)[count-1] == '\n')
+                    (cur_line)[count-1] = '\0';
             #else
-                *line = readline("> ");
-                if (*line && **line)
-                add_history(*line);
+                line = readline("");
+                if (line && *line)
+                    add_history(line);
             #endif
         };
         if (cur_line == NULL){
@@ -104,5 +103,5 @@ int main(int argc, char ** argv){
 
     free(cur_line);
     return 0;
-    
+
 }

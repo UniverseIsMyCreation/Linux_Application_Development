@@ -7,12 +7,11 @@ AC_CONFIG_HEADERS([config.h])
 # Checks for programs.
 AC_PROG_CC
 
-
 # Checks for libraries.
-AC_CHECK_HEADER([rhash.h], [], [AC_MSG_ERROR([Unable to find rhash.h])])
-AC_CHECK_HEADER([stdio.h], [], [AC_MSG_ERROR([Unable to find stdio.h])])
-AC_CHECK_HEADER([string.h], [AC_MSG_ERROR([find aux string.h])], [])
-AC_CHECK_HEADER([ctype.h], [AC_MSG_ERROR([find aux ctype.h])], [])
+AC_CHECK_HEADER([rhash.h], [], [AC_MSG_ERROR([Unable to find aux rhash.h])])
+AC_CHECK_HEADER([stdio.h], [], [AC_MSG_ERROR([Unable to find aux stdio.h])])
+AC_CHECK_HEADER([string.h], [], [AC_MSG_ERROR([Unable to find aux string.h])],])
+AC_CHECK_HEADER([ctype.h], [], [AC_MSG_ERROR([Unable to find aux ctype.h])])
 AC_CHECK_LIB([rhash], [rhash_msg], [], [AC_MSG_ERROR([rhash_msg is needed])])
 AC_CHECK_LIB([rhash], [rhash_library_init], [], [AC_MSG_ERROR([rhash_library_init is needed])])
 AC_CHECK_LIB([rhash], [rhash_file], [], [AC_MSG_ERROR([rhash_file is needed])])
@@ -21,11 +20,10 @@ AC_CHECK_LIB([rhash], [rhash_print_bytes], [], [AC_MSG_ERROR([rhash_print_bytes 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_TYPE_SIZE_T
 
-AC_ARG_WITH([readline],
-	[AS_HELP_STRING([--with-readline],
-	[make able support for readline])],
-	[with_readline=yes],
-	[])
+AC_ARG_ENABLE([readline],
+	[AS_HELP_STRING([--with-readline], [enable support for readline])],
+	[with_readline=yes], []
+	)
 
 AS_IF([test "x$with_readline" != xno], [
  	AC_CHECK_HEADERS([readline/readline.h readline/history.h])
