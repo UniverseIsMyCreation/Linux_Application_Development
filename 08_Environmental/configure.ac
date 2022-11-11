@@ -20,14 +20,8 @@ AC_CHECK_LIB([rhash], [rhash_print_bytes], [], [AC_MSG_ERROR([rhash_print_bytes 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_TYPE_SIZE_T
 
-AC_ARG_ENABLE([readline],
-	[AS_HELP_STRING([--with-readline], [enable support for readline])],
-	[with_readline=yes], []
-	)
-
-AS_IF([test "x$with_readline" != xno], [
- 	AC_CHECK_HEADERS([readline/readline.h readline/history.h])
- 	AC_CHECK_LIB([readline], [readline])])
+AC_ARG_ENABLE([readline], AS_HELP_STRING([--enable-readline], [use readline instead of getline]), AC_DEFINE(WITH_READLINE, [1], [Readline mode]), [with_readline="false"])
+AS_IF([test "x$with_readline" = "xfalse"], [AC_SUBST(LIBS, ["-lrhash"])])
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

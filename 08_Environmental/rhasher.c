@@ -7,12 +7,28 @@
 #define LEN_DIGEST 64
 #define LEN_OUTPUT 130
 
-#ifdef HAVE_LIBREADLINE
+#include "config.h"
+
+#ifdef WITH_READLINE
     #include <readline/readline.h>
     #include <readline/history.h>
 #endif
 
-#include "config.h"
+size_t getcurrentline(char ** cur_line){
+    #ifdef WITH_READLINE
+	    if (*cur_line) {
+		    free(*cur_line);
+	    }
+	    *cur_line = readline(NULL);
+	    if (*cur_line == NULL) {
+		    return -1;
+	    }
+	    return strlen(*cur_line);
+    #else
+	    size_t length = 0;
+	    return getline(cur_line, &length, stdin);
+    #endif
+}
 
 int main(int argc, char ** argv){
     char digest[LEN_DIGEST];
@@ -23,27 +39,15 @@ int main(int argc, char ** argv){
     char * name = NULL;
     int style;
     unsigned hash;
+    int result;
 
     rhash_library_init(); /* initialize static data */
 
     for(;;){
+
+        result = getcurrentline(&cur_line);
         
-        {
-            free(cur_line);
-            #ifndef HAVE_LIBREADLINE
-                size_t len = 0;
-                int count = getline(&cur_line, &len, stdin);
-                if (count <= 0)
-                    cur_line = NULL;
-                else if ((cur_line)[count-1] == '\n')
-                    (cur_line)[count-1] = '\0';
-            #else
-                line = readline("");
-                if (line && *line)
-                    add_history(line);
-            #endif
-        };
-        if (cur_line == NULL){
+        if (result == -1){
             break;
         }
 
@@ -100,8 +104,9 @@ int main(int argc, char ** argv){
         fprintf(stdout, "%s\n", output);
 
     }
-
-    free(cur_line);
+    if (cur_line){
+        free(cur_line);
+    }
     return 0;
 
 }
