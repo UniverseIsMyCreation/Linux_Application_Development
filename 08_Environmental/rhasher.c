@@ -31,7 +31,7 @@ size_t getcurrentline(char ** cur_line){
 }
 
 int main(int argc, char ** argv){
-    char digest[LEN_DIGEST];
+    unsigned char digest[LEN_DIGEST];
     char output[LEN_OUTPUT];
     char * cur_line = NULL;
     char sep[LEN_SEP] = " ";
