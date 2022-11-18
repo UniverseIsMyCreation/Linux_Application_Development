@@ -16,6 +16,8 @@ int main(int argc, char **argv) {
     textdomain(PACKAGE);
 
     printf(_("Please, enter any number from 1 to 100 included\n"));
+    int pred_number = 0;
+    scanf("%d", &pred_number);
     int low_bound = 1;
     int up_bound = 100;
     int mid_bound = (low_bound+up_bound)/2;
