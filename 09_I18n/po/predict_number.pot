@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-21 02:40+0300\n"
+"POT-Creation-Date: 2022-11-21 03:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,30 +22,30 @@ msgstr ""
 msgid "Please, enter any number from 1 to 100 included\n"
 msgstr ""
 
-#: src/predict_number.c:24
+#: src/predict_number.c:25
 msgid "yes"
 msgstr ""
 
-#: src/predict_number.c:25
+#: src/predict_number.c:26
 msgid "not"
 msgstr ""
 
-#: src/predict_number.c:26
+#: src/predict_number.c:27
 msgid "nothing"
 msgstr ""
 
-#: src/predict_number.c:29
+#: src/predict_number.c:30
 #, c-format
 msgid ""
 "Can I ask if your number greater than %d (write yes or not or nothing)?\n"
 msgstr ""
 
-#: src/predict_number.c:44
+#: src/predict_number.c:45
 #, c-format
 msgid "Error input, try again\n"
 msgstr ""
 
-#: src/predict_number.c:48
+#: src/predict_number.c:49
 #, c-format
 msgid "Your desired number was: %d\n"
 msgstr ""
