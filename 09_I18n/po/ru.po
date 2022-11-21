@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  09_I18n\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-21 02:40+0300\n"
-"PO-Revision-Date: 2022-11-21 02:43+0300\n"
+"POT-Creation-Date: 2022-11-21 03:33+0300\n"
+"PO-Revision-Date: 2022-11-21 03:33+0300\n"
 "Last-Translator: Ilya <ilyagr2012@gmail.com>\n"
 "Language-Team: Russian <gnu@d07.ru>\n"
 "Language: ru\n"
@@ -24,30 +24,30 @@ msgstr ""
 msgid "Please, enter any number from 1 to 100 included\n"
 msgstr "Пожалуйста, введите любое число от 1 до 100 включительно\n"
 
-#: src/predict_number.c:24
+#: src/predict_number.c:25
 msgid "yes"
 msgstr "да"
 
-#: src/predict_number.c:25
+#: src/predict_number.c:26
 msgid "not"
 msgstr "нет"
 
-#: src/predict_number.c:26
+#: src/predict_number.c:27
 msgid "nothing"
 msgstr "ничего"
 
-#: src/predict_number.c:29
+#: src/predict_number.c:30
 #, c-format
 msgid ""
 "Can I ask if your number greater than %d (write yes or not or nothing)?\n"
-msgstr "Могу ли я спросить: ваше число было больше %d (напишите да или нет или ничего)\n"
+msgstr "Могу ли я спросить, ваше число было больше чем %d (напишите да или нет или ничего)\n"
 
-#: src/predict_number.c:44
+#: src/predict_number.c:45
 #, c-format
 msgid "Error input, try again\n"
-msgstr "Ошибка ввода, попробуйте снова\n"
+msgstr "Ошибка ввода, попробуйте еще раз\n"
 
-#: src/predict_number.c:48
+#: src/predict_number.c:49
 #, c-format
 msgid "Your desired number was: %d\n"
 msgstr "Ваше желанное число было: %d\n"
