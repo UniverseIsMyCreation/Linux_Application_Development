@@ -4,7 +4,7 @@
 #include <libintl.h>
 #include <locale.h>
 #include <string.h>
-//#include "config.h"
+#include "config.h"
 
 #define _(STRING) gettext(STRING)
 #define LOCALE_PATH "po" 
