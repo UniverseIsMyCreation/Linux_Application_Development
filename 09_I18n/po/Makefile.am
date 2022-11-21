@@ -1,10 +1,10 @@
 pkgdata_DATA = ru/LC_MESSAGES/predict_number.mo
 
-ru/LC_MESSAGES/predict_number.mo:	ru.po
+ru/LC_MESSAGES/predict_number.mo:	number_ru.po
 		mkdir -p `dirname $@`
 		msgfmt $< -o $@
 
-ru.po:	translate.pot
+number_ru.po:	translate.pot
 		msgmerge -U $@ $<
 
 translate.pot:	predict_number.pot ../src/predict_number.c
