@@ -12,8 +12,8 @@
 
 int main(int argc, char **argv) {
     setlocale(LC_ALL, "");
-    bindtextdomain(PACKAGE, LOCALE_PATH);
-    textdomain(PACKAGE);
+    bindtextdomain("predict_number", LOCALE_PATH);
+    textdomain("predict_number");
 
     printf(_("Please, enter any number from 1 to 100 included\n"));
     int pred_number = 0;
