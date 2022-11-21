@@ -1,1 +1,0 @@
-bin_PROGRAMS=predict_number
