@@ -10,7 +10,8 @@
 #define LOCALE_PATH "po"
 #define LEN 100
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv){
+
     setlocale(LC_ALL, "");
     bindtextdomain(PACKAGE, LOCALE_PATH);
     textdomain(PACKAGE);
@@ -47,5 +48,7 @@ int main(int argc, char **argv) {
         }
     }
     printf(_("Your desired number was: %d\n"), up_bound);
+
     return 0;
+
 }
