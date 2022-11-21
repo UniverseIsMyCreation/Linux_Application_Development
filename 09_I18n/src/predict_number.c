@@ -17,7 +17,8 @@ int main(int argc, char **argv) {
 
     printf(_("Please, enter any number from 1 to 100 included\n"));
     int pred_number = 0;
-    scanf("%d", &pred_number);
+    int res;
+    res = scanf("%d", &pred_number);
     int low_bound = 1;
     int up_bound = 100;
     int mid_bound = (low_bound+up_bound)/2;
@@ -27,7 +28,7 @@ int main(int argc, char **argv) {
     char user_ans[LEN];
     while (low_bound < up_bound){
         printf(_("Can I ask if your number greater than %d (write yes or not or nothing)?\n"), mid_bound);
-        scanf("%s", user_ans);
+        res = scanf("%s", user_ans);
         if (!strcmp(user_ans, not)){
             up_bound = mid_bound;
             mid_bound = (low_bound+up_bound)/2;
