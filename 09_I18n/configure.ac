@@ -1,7 +1,7 @@
 AC_PREREQ([2.69])
 AC_INIT([predict_number], [1.0], [ilyagr2012@gmail.com])
 AM_INIT_AUTOMAKE([foreign])
-AC_CONFIG_SRCDIR([predict_number.c])
+AC_CONFIG_SRCDIR([src/predict_number.c])
 AC_CONFIG_HEADERS([config.h])
 
 # Checks for programs.
@@ -21,5 +21,5 @@ AC_CHECK_HEADERS([libgen.h], [], [AC_MSG_ERROR([Unable to find main libgen.h])])
 AC_CHECK_FUNCS([setlocale])
 
 #po/Makefile
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile po/Makefile src/Makefile])
 AC_OUTPUT
