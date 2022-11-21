@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  09_I18n\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-21 12:38+0300\n"
+"POT-Creation-Date: 2022-11-21 13:11+0300\n"
 "PO-Revision-Date: 2022-11-21 12:38+0300\n"
 "Last-Translator: Ilya <ilyagr2012@gmail.com>\n"
 "Language-Team: Russian <gnu@d07.ru>\n"
@@ -19,35 +19,37 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/predict_number.c:19
+#: ../src/predict_number.c:19
 #, c-format
 msgid "Please, enter any number from 1 to 100 included\n"
 msgstr "Пожалуйста, введите любое число от 1 до 100 включительно\n"
 
-#: src/predict_number.c:26
+#: ../src/predict_number.c:26
 msgid "yes"
 msgstr "да"
 
-#: src/predict_number.c:27
+#: ../src/predict_number.c:27
 msgid "not"
 msgstr "нет"
 
-#: src/predict_number.c:28
+#: ../src/predict_number.c:28
 msgid "nothing"
 msgstr "ничего"
 
-#: src/predict_number.c:31
+#: ../src/predict_number.c:31
 #, c-format
 msgid ""
 "Can I ask if your number greater than %d (write yes or not or nothing)?\n"
-msgstr "Могу ли я спросить: ваше число больше чем %d (напишите да или нет или ничего)\n"
+msgstr ""
+"Могу ли я спросить: ваше число больше чем %d (напишите да или нет или "
+"ничего)\n"
 
-#: src/predict_number.c:46
+#: ../src/predict_number.c:46
 #, c-format
 msgid "Error input, try again\n"
 msgstr "Ошибка ввода, попробуйте еще раз\n"
 
-#: src/predict_number.c:50
+#: ../src/predict_number.c:50
 #, c-format
 msgid "Your desired number was: %d\n"
 msgstr "Ваше желанное число было: %d\n"
